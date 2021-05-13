@@ -5,6 +5,7 @@ from glob import glob
 from tensorflow.keras.models import load_model
 
 
+
 def read_brain(brain_dir, mode='train', x0=42, x1=194, y0=29, y1=221, z0=2, z1=146):
 
     """
@@ -141,10 +142,10 @@ def save_predicted_results(prediction, brain_affine, view, output_dir,  z_main=1
 
 if __name__ == '__main__':
        
-    val_data_dir       = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/data/MICCAI_BraTS_2018_Data_Validation/*'
+    val_data_dir       = './Brain-Tumor-Segmentation/data/MICCAI_BraTS_2018_Data_Validation/*'
     view               = 'axial'
-    saved_model_dir    = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/save/axial_fold0/model.hdf5'  #ex './save/axial_fold0/model.hdf5'
-    save_pred_dir      = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/predict/'
+    saved_model_dir    = './Brain-Tumor-Segmentation/save/axial_fold0/model.hdf5'  #ex './save/axial_fold0/model.hdf5'
+    save_pred_dir      = './Brain-Tumor-Segmentation/predict/'
     batch_size         = 32
 
     
