@@ -7,21 +7,6 @@ import numpy as np
 from tensorflow.keras.utils import Sequence, to_categorical
 
 
-class ThreadSafeIter:
-        def __init__(self, it):
-                self.it = it
-                self.lock = threading.Lock()
-        def __iter__(self):
-                return self
-        def next(self):
-                with self.lock:
-                        return self.it.next()
-
-def threadsafe_generator(f):
-        def g(*a, **kw):
-                return ThreadSafeIter(f(*a,**kw))
-        return g
-
 class CustomDataGenerator(Sequence):
     def __init__(self, hdf5_file, brain_idx, batch_size=16, view="axial", mode='train', horizontal_flip=False,
                  vertical_flip=False, rotation_range=0, zoom_range=0., shuffle=True):
