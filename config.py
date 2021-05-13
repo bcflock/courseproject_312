@@ -1,11 +1,5 @@
 import os
-'''
-os.environ['TF_CONFIG'] = json.dumps({
-	'cluster': {
-		'worker':['classt14','classt15'],
-	},
-	'task' : {'type': 'worker', 'index':0
-})'''
+
 """
 
 The required configurations for training phase ('prepare_Data.py', 'train.py').
@@ -32,7 +26,7 @@ The path to all brain volumes (ex: suppose we have a folder 'MICCAI_BraTS_2019_D
 that contains two HGG and LGG folders so:
 data_dir='./MICCAI_BraTS_2019_Data_Training/*/*')
 """
-cfg['data_dir']              = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/data/MICCAI_BraTS_2018_Data_Training/*/*'
+cfg['data_dir']              = './Brain-Tumor-Segmentation/data/MICCAI_BraTS_2018_Data_Training/*/*'
 
 
 
@@ -55,14 +49,14 @@ cfg['data_channels']         = 4
 """
 The path to save table file + k-fold files
 """
-cfg['save_data_dir']         = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/data/'
+cfg['save_data_dir']         = './Brain-Tumor-Segmentation/data/'
 
 
 
 """
 The path to save models + log files + tensorboards
 """
-cfg['save_dir']        = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/save/'
+cfg['save_dir']			= './Brain-Tumor-Segmentation/save/'
 
 
 
@@ -76,14 +70,14 @@ cfg['k_fold']                = 5
 """
 The defualt path of saved table.
 """
-cfg['hdf5_dir']              = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/data/val_data.hdf5'
+cfg['hdf5_dir']              = './Brain-Tumor-Segmentation/data/val_data.hdf5'
 
 
 
 """
 The path to brain indexes of specific fold (a numpy file that was saved in ./data/ by default)
 """
-cfg['brains_idx_dir']        = '/scratch/pbsjobs/bcf26/BraTS_project/Brain-Tumor-Segmentation/data/fold0_idx.npy'
+cfg['brains_idx_dir']        = './Brain-Tumor-Segmentation/data/fold0_idx.npy'
 
 
 
