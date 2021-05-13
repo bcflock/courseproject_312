@@ -1,0 +1,5 @@
+Bootstrap: docker
+From: tensorflow/tensorflow:1.15.5-gpu
+
+%post
+  pip install --user -r requirements.txt
