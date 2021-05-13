@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --output /scratch/pbsjobs/bcf26/test.o%j
+#SBATCH --output ./test.o%j
 #SBATCH --nodes 1 #
 #SBATCH	--gpus-per-task 1 
 #SBATCH --time=0-18:00:00
