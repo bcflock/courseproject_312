@@ -8,11 +8,12 @@
 #SBATCH --mem-per-gpu=12G
 module load cuda/8.0 singularity/3.5.1 hdf5/1.10.1 python
 
-mkdir $PFSDIR/course-project-bcf26/
-WORKDIR= $PFSDIR #/scratch/pbsjobs/bcf26/BraTS_project
+mkdir $PFSDIR/course-project
+WORKDIR= $PFSDIR/course-project #/scratch/pbsjobs/bcf26/BraTS_project
 mkdir $WORKDIR/Brain-Tumor-Segmentation
+mkdir $WORKDIR/Brain-Tumor-Segmentation/data
 
-cp -R ./data $WORKDIR
+cp -R ./data $WORKDIR/Brain-Tumor-Segmentation
 find . -type f ! -name "*.py*" -exec cp {} $WORKDIR/
 cp *.py $WORKDIR/Brain-Tumor-Segmentation
 
